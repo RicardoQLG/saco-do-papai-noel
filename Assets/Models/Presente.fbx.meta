@@ -1,23 +1,8 @@
 fileFormatVersion: 2
-guid: 103ef790d8b44ff41acab41d3af173ab
+guid: 8b1f272334f83434cb6d9079e8354f93
 ModelImporter:
   serializedVersion: 20101
-  internalIDToNameTable:
-  - first:
-      74: 4850963909608787661
-    second: Icosphere|CircleAction
-  - first:
-      74: 6639205238635089029
-    second: Icosphere|IcosphereAction
-  - first:
-      74: 6997882522552206460
-    second: Circle|CircleAction
-  - first:
-      74: 4677854431427903912
-    second: Circle|IcosphereAction
-  - first:
-      74: -623603649343465320
-    second: Scene
+  internalIDToNameTable: []
   externalObjects: {}
   materials:
     materialImportMode: 1
