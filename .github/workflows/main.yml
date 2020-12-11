@@ -39,10 +39,9 @@ jobs:
           path: build
 
       - name: Create a Release
-        uses: actions/create-release@v1.1.4
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: ncipollo/release-action@v1
         with:
-          artifact: build
+          artifact: "Build.zip"
+          token: ${{ secrets.GITHUB_TOKEN }}
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
