@@ -41,6 +41,6 @@ jobs:
       - name: Create a Release
         uses: ncipollo/release-action@v1
         with:
-          artifact: "Build.zip"
+          artifacts: "build/*.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.ref }}
