@@ -29,3 +29,8 @@ jobs:
         with:
           name: Build
           path: build
+
+      - name: Create a Release
+        uses: actions/create-release@v1.1.4
+        with:
+          release_name: "Release v0.0.1"
