@@ -1,0 +1,31 @@
+name: TestBuild
+
+on:
+  push:
+    branches: [ test ]
+  pull_request:
+    branches: [ test ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        
+      - name: Build project 🏗
+        uses: webbertakken/unity-builder@v1.5
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          unityVersion: 2020.1.0f1
+          targetPlatform: StandaloneWindows
+          versioning: Semantic
+
+      - name: Create artifact 🎁
+        uses: actions/upload-artifact@v1
+        with:
+          name: Build
+          path: build
