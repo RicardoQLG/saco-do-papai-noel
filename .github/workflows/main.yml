@@ -20,10 +20,9 @@ jobs:
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
-          projectPath: path/to/your/project
-          unityVersion: 2020.X.XXXX
-          targetPlatform: WebGL
-          versioning: Semantic 
+          unityVersion: 2020.1.0f1
+          targetPlatform: StandaloneWindows
+          versioning: Semantic
 
       - name: Create artifact 🎁
         uses: actions/upload-artifact@v1
