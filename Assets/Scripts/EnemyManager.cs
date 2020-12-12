@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class EnemyManager : MonoBehaviour
   public Transform lastSpawnPoint = null;
   public Transform player;
   public List<GameObject> enemies = new List<GameObject>();
+  public AudioClip newWaveSound;
 
   public float enemyInterval;
   public int currentWaveIndex;
@@ -27,6 +29,8 @@ public class EnemyManager : MonoBehaviour
     currentWaveKids = waveSize[currentWaveIndex];
     yield return new WaitForSeconds(seconds);
     UIManager.instance.SetWaveSize(currentWaveKids);
+    UIManager.instance.SetWaveInfo(waveSize.Count, currentWaveIndex + 1);
+    SoundManager.instance.PlaySound(newWaveSound);
 
     while (currentWaveKids != 0)
     {
@@ -69,7 +73,7 @@ public class EnemyManager : MonoBehaviour
     {
       if (currentWaveIndex >= waveSize.Count)
       {
-        Debug.Log("You win!");
+        SceneManager.LoadScene("Final", LoadSceneMode.Single);
         return;
       }
 

@@ -9,6 +9,12 @@ public class MenuManager : MonoBehaviour
 
   public void StartGame()
   {
+    StartCoroutine(NextScene());
+  }
+
+  public IEnumerator NextScene()
+  {
+    yield return new WaitForSeconds(.3f);
     SceneManager.LoadScene("Prologo", LoadSceneMode.Single);
   }
 

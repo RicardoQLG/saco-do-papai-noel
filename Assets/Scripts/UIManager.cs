@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Events;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
   public static UIManager instance { get; private set; }
   public Slider healthBar;
   public Slider waveBar;
+  public TextMeshProUGUI waveCounter;
   public GameObject dieScreen;
 
   private void Awake()
@@ -17,6 +18,11 @@ public class UIManager : MonoBehaviour
   public void ChangeHealth(float health)
   {
     healthBar.value = health;
+  }
+
+  public void SetWaveInfo(int total, int current)
+  {
+    waveCounter.text = current.ToString() + "/" + total.ToString();
   }
 
   public void Die()
